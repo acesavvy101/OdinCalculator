@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Starborn";
+    src: url(/fonts/Starborn.ttf);
+}
+
+h1 {
+    font-family: Starborn;
+    color: #FF76B7;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 50px;
+}
+body {
+    background-image: url(calcImages/wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;  
+    overflow: hidden;  
+}
+#calculator {
+    width: 500px;
+    height: auto;
+    /* this makes it centered */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 
+#Button1 {
+    position: absolute;
+    top: 400px; 
+    left: 180px
+}
+
+button {
+    background: none; 
+    border: none;
+    padding: 0;
+}
+
+#button1 {
+    width: 100px;
+    height: 100px;
+}
+
+ */
