@@ -64,14 +64,21 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
 #clearBtn {
     font-size: 10px;
     padding: 10px;
-    margin-left: 270px; 
+    margin-left: 260px; 
     margin-bottom: 15px;
     border-radius: 25px;
     font-family: Starborn;
     color: #FFF4BF;
     background-color: #FF76B7;
+}
+
+button.buttons {
+    width: 50px;
+}
+
+button.operatorBtn {
+    width: 55px;
 }
