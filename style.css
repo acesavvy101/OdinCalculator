@@ -23,15 +23,52 @@ body {
     height: 100vh;  
     overflow: hidden;  
 }
-#calculator {
+#calculatorBackground {
     width: 500px;
-    height: auto;
+    height: 680px;
     /* this makes it centered */
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+#calculatorContainer {
+    position: relative;
+    /* makes the container fit the image exactly */
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#buttonContainer {
+    position: absolute;
+    /* makes it as big as the parent */
+    top: 43%;
+    left: 18%;
+    width: 100%;
+    height: 100%;
+}
+
+.buttons , .operatorBtn {
+    margin-right: 33px; 
+    margin-bottom: 15px;
+}
+.operatorBtn {
+    color: #FFF4BF;
+    background-color: #FF76B7;
+}
+
+button {
+    font-size: 35px;
+    font-family: Starborn;
+    border-radius: 25px;
+    color: #FF76B7;
+    background-color: #FFF4BF;
+    padding: 10px;
+}
+
+#buttonFirstRow {
+   
+}
 
 /* this is for the buttons and calc itself! */
 /*
