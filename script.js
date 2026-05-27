@@ -31,16 +31,23 @@ function operate (operator, num1, num2) {
     }
 }
 
-// update variable when buttons clicked, calc display should return the buttons clicked
-// query selector all needs a for each loop
+
+// REQUIRE FIX: ALLOWS MULTIPLE DIGITS TO BE STORED IN THE VARIABLE/DISPLAYED!!
 function clickedButton () {
+
+    const oldNumber = document.querySelector('p');
+    
     const numberBtn = document.querySelectorAll(".numberButtons").forEach(btn => {
         btn.addEventListener("click" , (event) => {
-            number1=event.target.innerText //gets the text number of the buttons
-           // OR USE: .value (gets the value of the buttons)
-            console.log(number1)
-        })
+            number1=event.target.innerText //gets the text number of the button | OR USE: .value (gets the value of the buttons)
+            
+            //DISPLAY: should reflect the value of number variable not the value of button!
+            oldNumber.innerText = number1 //updates the display to the value of a number button
+
+            console.log(number1)})
+
     })
-    }
+}
+
 
 clickedButton();
