@@ -42,12 +42,30 @@ body {
 #buttonContainer {
     position: absolute;
     /* makes it as big as the parent */
-    top: 36%;
+    top: 35%;
     left: 18%;
     width: 100%;
     height: 100%;
 }
 
+#displayContainer {
+    font-family: Starborn;
+    font-size: 30px;
+    color: #95BBEA;
+    position: absolute;
+    top: 20%;
+    /* the display container should start from the left edge! */
+    left: 20%;
+    width: 300px;
+    overflow: hidden;
+}
+
+#displayNumber {
+    /* so the number starts from the right of the display container */
+    text-align: right;
+}
+
+/* the buttons inside the button container: */
 .buttons , .operatorBtn {
     margin-right: 33px; 
     margin-bottom: 15px;
@@ -82,3 +100,4 @@ button.buttons {
 button.operatorBtn {
     width: 55px;
 }
+
