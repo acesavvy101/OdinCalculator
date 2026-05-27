@@ -32,7 +32,9 @@ body {
     margin-right: auto;
 }
 
+
 /* this is for the buttons and calc itself! */
+/*
 button {
     background: none; 
     border: none;
@@ -45,8 +47,8 @@ button {
 
 #Button1 {
     position: absolute;
-    top: 450px; 
-    left: 200px
+    top: 50%;
+    left: 40%;
 }
 #Button2 {
     position: absolute;
@@ -111,3 +113,28 @@ button {
     top: 690px; 
     left: 380px
 }
+
+#ButtonAdd {
+    position: absolute;
+    top: 450px; 
+    left: 470px
+}
+
+#ButtonSub {
+    position: absolute;
+    top: 530px; 
+    left: 470px
+}
+
+#ButtonMul {
+    position: absolute;
+    top: 610px; 
+    left: 470px
+}
+
+#ButtonDiv {
+    position: absolute;
+    top: 690px; 
+    left: 470px
+}
+*/
