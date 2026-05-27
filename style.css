@@ -66,7 +66,7 @@ body {
 }
 
 /* the buttons inside the button container: */
-.buttons , .operatorBtn {
+.numberButtons , .operatorBtn {
     margin-right: 33px; 
     margin-bottom: 15px;
     font-size: 35px;
@@ -93,11 +93,11 @@ body {
     background-color: #FF76B7;
 }
 
-button.buttons {
+button.numberButtons {
     width: 50px;
 }
 
 button.operatorBtn {
-    width: 55px;
+    width: 50px;
 }
 

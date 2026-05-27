@@ -1,26 +1,23 @@
 function add (num1, num2) {
     return num1 + num2;
 }
-console.log(add(1,2));
 
 function subtract (num1,num2) {
     return num1 - num2;
 }
-console.log(subtract(4,9));
 
 function multiply (num1,num2) {
     return (num1*num2);
 }
-console.log(multiply(6,3));
 
 function divide (num1,num2) {
     return num1/num2;
 }
-console.log (divide(6,2));
 
-let number1
-let number2
-let operator
+// variables to be updated:
+let number1 =""
+let number2 =""
+let operator =""
 
 function operate (operator, num1, num2) {
     if (operator === "+"){
@@ -33,3 +30,17 @@ function operate (operator, num1, num2) {
         return (divide(num1,num2));
     }
 }
+
+// update variable when buttons clicked, calc display should return the buttons clicked
+// query selector all needs a for each loop
+function clickedButton () {
+    const numberBtn = document.querySelectorAll(".numberButtons").forEach(btn => {
+        btn.addEventListener("click" , (event) => {
+            number1=event.target.innerText //gets the text number of the buttons
+           // OR USE: .value (gets the value of the buttons)
+            console.log(number1)
+        })
+    })
+    }
+
+clickedButton();
