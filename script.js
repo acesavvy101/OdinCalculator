@@ -19,7 +19,7 @@ let number1 =""
 let number2 =""
 let operator =""
 
-function operate (operator, num1, num2) {
+function operate (num1, operator, num2) {
     if (operator === "+"){
        return (add(num1,num2));
     } else if (operator === "-") {
@@ -32,7 +32,7 @@ function operate (operator, num1, num2) {
 }
 
 
-function clickedButton () {
+function firstNumber () {
 
     const oldNumber = document.querySelector('p');
     
@@ -43,11 +43,26 @@ function clickedButton () {
             
             oldNumber.innerText = number1  //DISPLAY: should reflect the value of number variable not the value of button!
 
-            console.log(number1)})
+        })
 
     })
 }
+firstNumber();
 
+function operateNumber () {
 
-clickedButton();
+    const oldNumber = document.querySelector('p');
+    
+    const numberBtn = document.querySelectorAll(".operatorBtn").forEach(btn => {
+        btn.addEventListener("click" , (event) => {
+            operator=event.target.innerText  //no concat!
+            
+             //DISPLAY: should reflect the value of number variable concated with the operator
+            oldNumber.innerText = (number1 += operator) 
+        })
+
+    })
+}
+operateNumber();
+
 
