@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Starborn";
-    src: url(/fonts/Starborn.ttf);
+    src: url(./fonts/Starborn.ttf);
 }
 #container {
     display: flex;
@@ -20,7 +20,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;  
+    min-height: 100vh;  
     overflow: hidden;  
 }
 #calculatorBackground {
