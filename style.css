@@ -12,7 +12,7 @@ h1 {
     font-family: Starborn;
     color: #FF76B7;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 70px;
     font-size: 50px;
 }
 body {
@@ -66,7 +66,7 @@ body {
 }
 
 /* the buttons inside the button container: */
-.numberButtons , .operatorBtn {
+.numberButtons , .operatorBtn , #equalBtn {
     margin-right: 33px; 
     margin-bottom: 15px;
     font-size: 35px;
@@ -76,7 +76,7 @@ body {
     color: #FF76B7;
     background-color: #FFF4BF;
 }
-.operatorBtn {
+.operatorBtn , #equalBtn {
     color: #FFF4BF;
     background-color: #FF76B7;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

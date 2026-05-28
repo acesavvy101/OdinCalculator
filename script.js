@@ -1,17 +1,17 @@
 function add (num1, num2) {
-    return num1 + num2;
+    return (num1 + num2);
 }
 
 function subtract (num1,num2) {
-    return num1 - num2;
+    return (num1) - (num2);
 }
 
 function multiply (num1,num2) {
-    return (num1*num2);
+    return (num1) * (num2);
 }
 
 function divide (num1,num2) {
-    return num1/num2;
+    return (num1)/ (num2);
 }
 
 // variables to be updated:
@@ -21,13 +21,17 @@ let operator =""
 
 function operate (num1, operator, num2) {
     if (operator === "+"){
-       return (add(num1,num2));
+        //return (add(num1,num2));
+       console.log(add(num1,num2));
     } else if (operator === "-") {
-        return (subtract(num1, num2));
+        //return (subtract(num1, num2));
+        console.log(subtract(num1, num2));
     } else if (operator === "*") {
-        return (multiply(num1,num2));
+        //return (multiply(num1,num2));
+        console.log(multiply(num1,num2));
     } else if (operator === "/") {
-        return (divide(num1,num2));
+        //return (divide(num1,num2));
+        console.log(divide(num1,num2));
     }
 }
 
@@ -61,7 +65,7 @@ function inputNumber () {
 }
 inputNumber();
 
-function operateNumber () {
+function inputOperator () {
 
     const oldNumber = document.querySelector('p');
     
@@ -77,5 +81,14 @@ function operateNumber () {
 
     })
 }
-operateNumber();
+inputOperator();
 
+function count () {
+    const equalButton = document.getElementById("equalBtn")
+    equalButton.addEventListener("click" ,() => {
+        operate(number1, operator, number2)
+        console.log("clicked")
+    })
+}
+
+count()
