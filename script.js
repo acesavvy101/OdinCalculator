@@ -62,11 +62,18 @@ function inputOperator () {
     
     const numberBtn = document.querySelectorAll(".operatorBtn").forEach(btn => {
         btn.addEventListener("click" , (event) => {
-            operator=event.target.innerText  //no concat!
-            
-             //DISPLAY: should reflect the value of number variable concated with the operator, NOT REASSIGN WITH +=
-            oldDisplay.innerText = (number1 + operator) 
-            firstInputNumber = false; //when this runs, the else from inputNumber() will run
+            if (number1 && operator && number2) { //the variables contain value, so its truthy | CONDITION= if (true)
+                operate(number1, operator, number2)
+                number1 = resultNumber; 
+                number2 ="";
+
+                oldDisplay.innerText = (number1 + operator) 
+            } else {
+                //DISPLAY: should reflect the value of number variable concated with the operator, NOT REASSIGN WITH +=
+               oldDisplay.innerText = (number1 + operator) 
+               firstInputNumber = false; //when this runs, the else from inputNumber() will run
+            }
+            operator=event.target.innerText; //to retrieve the value
         })
     })
 }
