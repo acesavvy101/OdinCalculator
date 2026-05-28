@@ -33,18 +33,26 @@ function operate (num1, operator, num2) {
 }
 
 let firstInputNumber = true;
+let justCounted = false;
 function inputNumber () {
 
     const oldDisplay = document.querySelector('p');
     
     const numberBtn = document.querySelectorAll(".numberButtons").forEach(btn => {
         btn.addEventListener("click" , (event) => {
-            //AGAIN BRO THIS IS A COMPARISON!!!
-            if (firstInputNumber===true) { 
+            if(justCounted===true) {
+                number1=event.target.innerText //overwrite number1 input
+                oldDisplay.innerText = number1  
+                //assign and reset this so else if condition runs!
+                firstInputNumber = true; 
+                justCounted=false 
+
+            } else if (firstInputNumber===true) { 
                 number1+=event.target.innerText  // FIX: allows multiple digits to be stored in a variable/displayed with string concat +=
                 //gets the text number of the button | OR USE: .value (gets the value of the buttons)
             
                 oldDisplay.innerText = number1  //DISPLAY: should reflect the value of number variable not the value of button!
+            
             } else  {
                 number2+=event.target.innerText 
 
@@ -91,6 +99,7 @@ function count () {
         number2 ="";
         operator ="" ;
         firstInputNumber=true; //make this true again so the input goes to number1
+        justCounted = true;
     })
 }
 
