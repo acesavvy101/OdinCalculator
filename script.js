@@ -19,26 +19,23 @@ let number1 =""
 let number2 =""
 let operator =""
 
+let resultNumber=""
 function operate (num1, operator, num2) {
     if (operator === "+"){
-        //return (add(num1,num2));
-       console.log(add(num1,num2));
+        resultNumber = (add(num1,num2)); //store in a variable to display ltr
     } else if (operator === "-") {
-        //return (subtract(num1, num2));
-        console.log(subtract(num1, num2));
+        resultNumber = (subtract(num1, num2));
     } else if (operator === "×") {
-        //return (multiply(num1,num2));
-        console.log(multiply(num1,num2));
+        resultNumber = (multiply(num1,num2));
     } else if (operator === "÷") {
-        //return (divide(num1,num2));
-        console.log(divide(num1,num2));
+        resultNumber = (divide(num1,num2));
     }
 }
 
 let firstInputNumber = true;
 function inputNumber () {
 
-    const oldNumber = document.querySelector('p');
+    const oldDisplay = document.querySelector('p');
     
     const numberBtn = document.querySelectorAll(".numberButtons").forEach(btn => {
         btn.addEventListener("click" , (event) => {
@@ -47,48 +44,59 @@ function inputNumber () {
                 number1+=event.target.innerText  // FIX: allows multiple digits to be stored in a variable/displayed with string concat +=
                 //gets the text number of the button | OR USE: .value (gets the value of the buttons)
             
-                oldNumber.innerText = number1  //DISPLAY: should reflect the value of number variable not the value of button!
-                console.log (number1)
+                oldDisplay.innerText = number1  //DISPLAY: should reflect the value of number variable not the value of button!
             } else  {
                 number2+=event.target.innerText 
 
                 //DISPLAY: concat, NOT REASSIGN WITH +=
-                oldNumber.innerText = (number1 + operator +number2 ) 
-                console.log(number2)
+                oldDisplay.innerText = (number1 + operator + number2);
             }
-
-
-
         })
-
     })
 }
 inputNumber();
 
 function inputOperator () {
 
-    const oldNumber = document.querySelector('p');
+    const oldDisplay = document.querySelector('p');
     
     const numberBtn = document.querySelectorAll(".operatorBtn").forEach(btn => {
         btn.addEventListener("click" , (event) => {
             operator=event.target.innerText  //no concat!
             
              //DISPLAY: should reflect the value of number variable concated with the operator, NOT REASSIGN WITH +=
-            oldNumber.innerText = (number1 + operator) 
+            oldDisplay.innerText = (number1 + operator) 
             firstInputNumber = false; //when this runs, the else from inputNumber() will run
-            console.log (operator)
         })
-
     })
 }
 inputOperator();
 
+
 function count () {
+    const oldDisplay = document.querySelector('p');
+
     const equalButton = document.getElementById("equalBtn")
     equalButton.addEventListener("click" ,() => {
         operate(number1, operator, number2)
-        console.log("clicked")
+        
+        oldDisplay.innerText= resultNumber;
     })
 }
 
 count()
+
+function clear () {
+    const oldDisplay = document.querySelector('p');
+
+    const clearButton = document.getElementById("clearBtn")
+    clearButton.addEventListener("click", () => {
+        firstInputNumber=true;//make this true again so the input goes to number1
+        oldDisplay.innerText = "";
+        number1 = "";
+        number2 ="";
+        operator ="" ;
+    })
+}
+
+clear()
