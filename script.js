@@ -78,9 +78,15 @@ function count () {
 
     const equalButton = document.getElementById("equalBtn")
     equalButton.addEventListener("click" ,() => {
+
         operate(number1, operator, number2)
         
         oldDisplay.innerText= resultNumber;
+        //update the number1 with the result and clear the number2 and operator for the next input
+        number1 = resultNumber; 
+        number2 ="";
+        operator ="" ;
+        firstInputNumber=true; //make this true again so the input goes to number1
     })
 }
 
