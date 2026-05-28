@@ -31,23 +31,35 @@ function operate (num1, operator, num2) {
     }
 }
 
-
-function firstNumber () {
+let firstInputNumber = true;
+function inputNumber () {
 
     const oldNumber = document.querySelector('p');
     
     const numberBtn = document.querySelectorAll(".numberButtons").forEach(btn => {
         btn.addEventListener("click" , (event) => {
-            number1+=event.target.innerText  // FIX: allows multiple digits to be stored in a variable/displayed with string concat
-            //gets the text number of the button | OR USE: .value (gets the value of the buttons)
+            //AGAIN BRO THIS IS A COMPARISON!!!
+            if (firstInputNumber===true) { 
+                number1+=event.target.innerText  // FIX: allows multiple digits to be stored in a variable/displayed with string concat +=
+                //gets the text number of the button | OR USE: .value (gets the value of the buttons)
             
-            oldNumber.innerText = number1  //DISPLAY: should reflect the value of number variable not the value of button!
+                oldNumber.innerText = number1  //DISPLAY: should reflect the value of number variable not the value of button!
+                console.log (number1)
+            } else  {
+                number2+=event.target.innerText 
+
+                //DISPLAY: concat, NOT REASSIGN WITH +=
+                oldNumber.innerText = (number1 + operator +number2 ) 
+                console.log(number2)
+            }
+
+
 
         })
 
     })
 }
-firstNumber();
+inputNumber();
 
 function operateNumber () {
 
@@ -57,12 +69,13 @@ function operateNumber () {
         btn.addEventListener("click" , (event) => {
             operator=event.target.innerText  //no concat!
             
-             //DISPLAY: should reflect the value of number variable concated with the operator
-            oldNumber.innerText = (number1 += operator) 
+             //DISPLAY: should reflect the value of number variable concated with the operator, NOT REASSIGN WITH +=
+            oldNumber.innerText = (number1 + operator) 
+            firstInputNumber = false; //when this runs, the else from inputNumber() will run
+            console.log (operator)
         })
 
     })
 }
 operateNumber();
-
 
