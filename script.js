@@ -119,3 +119,16 @@ function clear () {
 }
 
 clear()
+
+/*
+function ignoreFloat () {
+    //check if current input already has "." if yes, ignore/prevent. 
+    //current input: what button is clicked/what is displayed
+    const ignoreDot = document.getElementById("floatBtn");
+
+    if (number1.includes(".")) {
+        ignoreDot.disabled = true;
+    }
+}
+
+ignoreFloat() */
