@@ -59,6 +59,8 @@ function inputNumber () {
                 //DISPLAY: should reflect the value of number variable concated with the operator, NOT REASSIGN WITH +=
                 oldDisplay.innerText = (number1 + operator + number2);
             }
+
+            ignoreFloat() //recheck everytime something is clicked
         })
     })
 }
@@ -79,6 +81,8 @@ function inputOperator () {
             }
             operator=event.target.innerText; //`runs on every click and must not overwrite operator before the condition is evaluated`
             oldDisplay.innerText = (number1 + operator)  
+            
+            ignoreFloat()
         })
     })
 }
@@ -100,6 +104,8 @@ function count () {
         operator ="" ;
         firstInputNumber=true; //make this true again so the input goes to number1
         justCounted = true;
+
+        ignoreFloat()
     })
 }
 
@@ -115,20 +121,19 @@ function clear () {
         number1 = "";
         number2 ="";
         operator ="" ;
+
+        ignoreFloat()
     })
 }
 
 clear()
 
-/*
-function ignoreFloat () {
-    //check if current input already has "." if yes, ignore/prevent. 
-    //current input: what button is clicked/what is displayed
-    const ignoreDot = document.getElementById("floatBtn");
 
-    if (number1.includes(".")) {
-        ignoreDot.disabled = true;
-    }
+function ignoreFloat () {
+    const dotBtn = document.getElementById("floatBtn");
+    if (!dotBtn) return; 
+    const current = firstInputNumber ? number1 : number2; //if true, num1 else num2
+    dotBtn.disabled = current.includes("."); //if true (includes) then disable
 }
 
-ignoreFloat() */
+ignoreFloat() 
